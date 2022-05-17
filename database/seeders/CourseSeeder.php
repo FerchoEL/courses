@@ -11,7 +11,7 @@ use App\Models\Lesson;
 use App\Models\Requirement;
 use App\Models\Section;
 use Illuminate\Database\Seeder;
-use PhpParser\Node\Stmt\Foreach_;
+
 
 class CourseSeeder extends Seeder
 {
@@ -45,7 +45,7 @@ class CourseSeeder extends Seeder
                 foreach ($lessons as $lesson) {
                     Description::factory(1)->create(['lesson_id'=>$lesson->id]);
                 }
-            }
+            } 
         }
     }
 }
