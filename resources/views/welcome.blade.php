@@ -85,15 +85,18 @@
                         <p class="text-gray-500 text-sm mb-2">Prof: {{$course->teacher->name}}</p>
 
                         <div class="flex">
-
+                            <ul class="flex">
+                                <li class="mr-1"><i class="fas fa-star tex-{{$course->rating >= 1 ? 'yellow' : 'gray'}}400"></i></li>
+                                <li class="mr-1"><i class="fas fa-star tex-{{$course->rating >= 2 ? 'yellow' : 'gray'}}400"></i></li>
+                                <li class="mr-1"><i class="fas fa-star tex-{{$course->rating >= 3 ? 'yellow' : 'gray'}}400"></i></li>
+                                <li class="mr-1"><i class="fas fa-star tex-{{$course->rating >= 4 ? 'yellow' : 'gray'}}400"></i></li>
+                                <li class="mr-1"><i class="fas fa-star tex-{{$course->rating == 5 ? 'yellow' : 'gray'}}400"></i></li>
+                            </ul>
+                            <p class="text-sm text-gray-500">
+                                <i class="fas fa-users"></i>
+                                ({{$course->students_count}})
+                            </p>
                         </div>
-                        <ul class="flex">
-                            <li class="mr-1"><i class="fas fa-star tex-{{$course->rating >= 1 ? 'yellow' : 'gray'}}400"></i></li>
-                            <li class="mr-1"><i class="fas fa-star tex-{{$course->rating >= 2 ? 'yellow' : 'gray'}}400"></i></li>
-                            <li class="mr-1"><i class="fas fa-star tex-{{$course->rating >= 3 ? 'yellow' : 'gray'}}400"></i></li>
-                            <li class="mr-1"><i class="fas fa-star tex-{{$course->rating >= 4 ? 'yellow' : 'gray'}}400"></i></li>
-                            <li class="mr-1"><i class="fas fa-star tex-{{$course->rating == 5 ? 'yellow' : 'gray'}}400"></i></li>
-                        </ul>
                     </div>
                 </article>                
             @endforeach
