@@ -17,13 +17,16 @@ class Course extends Model
     const PUBLICADO = 3;
 
     public function getRatingAttribute(){
-        if ($this->reviews_count) {
+        if($this->reviews_count) {
             return round($this->reviews->avg('rating'),1);
         } else {
             return 5;
-        }
-        
-        
+        }        
+    }
+
+    public function getRouteKeyName()
+    {
+        return "slug";
     }
 
     //Relacion uno a muchos

@@ -6,9 +6,9 @@
             'active' => request()->routeIs('dashboard')
         ],
         [
-            'name' => 'prueba2',
-            'route' => '#',
-            'active' => false
+            'name' => 'Cursos',
+            'route' => route('courses.index'),
+            'active' => request()->routeIs('courses.index')
         ]
     ]
 @endphp

@@ -1,10 +1,11 @@
 <x-app-layout>
-    <section class="bg-cover" style="background-image: url({{asset('img/home/millennial-1438072.jpg')}})">
+   {{--  Portada --}}
+    <section class="bg-cover" style="background-image: url({{asset('img/home/station.jpg')}})">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36">
             <div class="w-full md:w-3/4 lg:w-1/2">
-                <h1 class="text-4xl text-white font-bold ">Domina la tecnologia web con coders free</h1>
-                <p class="text-white text-lg mt-2 mb-4"> En coders free encontraras crusos, manuales y artículos que te ayudaran
-                    a convertirte en un profesional del desarrollo web.
+                <h1 class="text-4xl text-white font-bold ">Domina la tecnologia </h1>
+                <p class="text-white text-lg mt-2 mb-4"> Encontraras crusos, manuales y artículos que te ayudaran
+                    a convertirte en un profesional.
                 </p>
                 <!-- component -->
                 <!-- This is an example component -->
@@ -73,30 +74,38 @@
             </a>
         </div>        
     </section>
-    <section class="mt-24">
+    <section class="my-24">
         <h1 class="text-center text-3xl text-gray-600">ÚLTIMOS CURSOS</h1>
         <p class=" text-center text-gray-500 text-sm mb-6">Trabajando duro apra seguir subiendo cursos</p>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-4 gap-x-6 gap-y-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
             @foreach ($courses as $course)
                 <article class="bg-white shadow-lg rounded overflow-hidden">
                     <img class="h-36 w-full object-cover" src="{{$course->image->url}}" alt="">
                     <div class="px-6 py-4">
                         <h1 class="text-xl text-gray-700 mb-2 leading-6">{{Str::limit($course->title,40)}}</h1>
                         <p class="text-gray-500 text-sm mb-2">Prof: {{$course->teacher->name}}</p>
+                        <p>{{$course->rating}}</p>
 
                         <div class="flex">
                             <ul class="flex">
-                                <li class="mr-1"><i class="fas fa-star tex-{{$course->rating >= 1 ? 'yellow' : 'gray'}}400"></i></li>
-                                <li class="mr-1"><i class="fas fa-star tex-{{$course->rating >= 2 ? 'yellow' : 'gray'}}400"></i></li>
-                                <li class="mr-1"><i class="fas fa-star tex-{{$course->rating >= 3 ? 'yellow' : 'gray'}}400"></i></li>
-                                <li class="mr-1"><i class="fas fa-star tex-{{$course->rating >= 4 ? 'yellow' : 'gray'}}400"></i></li>
-                                <li class="mr-1"><i class="fas fa-star tex-{{$course->rating == 5 ? 'yellow' : 'gray'}}400"></i></li>
+                                <li class="mr-1"><i class="fas fa-star text-{{$course->rating >= 1 ? 'yellow' : 'gray'}}-400"></i></li>
+                                <li class="mr-1"><i class="fas fa-star text-{{$course->rating >= 2 ? 'yellow' : 'gray'}}-400"></i></li>
+                                <li class="mr-1"><i class="fas fa-star text-{{$course->rating >= 3 ? 'yellow' : 'gray'}}-400"></i></li>
+                                <li class="mr-1"><i class="fas fa-star text-{{$course->rating >= 4 ? 'yellow' : 'gray'}}-400"></i></li>
+                                <li class="mr-1"><i class="fas fa-star text-{{$course->rating == 5 ? 'yellow' : 'gray'}}-400"></i></li>
+                                
                             </ul>
-                            <p class="text-sm text-gray-500">
+                            <p class="text-sm text-gray-500 ml-auto">
                                 <i class="fas fa-users"></i>
                                 ({{$course->students_count}})
                             </p>
+                            
                         </div>
+                        
+                        <a href="{{route('courses.show',$course)}}" type="submit" class="w-full mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Más informacion
+                        </a>
+
                     </div>
                 </article>                
             @endforeach
