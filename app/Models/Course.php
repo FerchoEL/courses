@@ -47,7 +47,7 @@ class Course extends Model
     }
 
     public function requirements(){
-        return $this->hasMany('App\Models\Requirment');
+        return $this->hasMany('App\Models\Requirement');
     }
     public function goals(){
         return $this->hasMany('App\Models\Goal');

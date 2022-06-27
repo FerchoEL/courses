@@ -4,15 +4,15 @@
 .btn-block{
     @apply block text-center w-full;
 }
-.btn-primary{
+.btn-primar{
     @apply bg-blue-500 text-white;
 }
 
-.btn-primary:hover{
+.btn-primar:hover{
     @apply bg-blue-700
 }
 
-.btn-dangery{
+.btn-danger{
     @apply bg-red-500 text-white;
 }
 
