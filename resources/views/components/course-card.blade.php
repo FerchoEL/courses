@@ -8,13 +8,12 @@
 
         <div class="flex">
             <ul class="flex">
-                <li class="mr-1"><i class="text-{{$course->rating >= 1 ? 'yellow' : 'gray'}}-500 fas fa-star"></i></li>
-                <li class="mr-1"><i class="text-{{$course->rating >= 2 ? 'yellow' : 'gray'}}-500 fas fa-star"></i></li>
-                <li class="mr-1"><i class="text-{{$course->rating >= 3 ? 'yellow' : 'gray'}}-500 fas fa-star"></i></li>
-                <li class="mr-1"><i class="text-{{$course->rating >= 4 ? 'yellow' : 'gray'}}-500 fas fa-star"></i></li>
-                <li class="mr-1"><i class="text-{{$course->rating == 5 ? 'yellow' : 'gray'}}-500 fas fa-star"></i></li>
-                
-                
+                <li class="mr-1"><i class="text-{{$course->rating >= 1 ? 'yellow' : 'gray'}}-400 fas fa-star"></i></li>
+                <li class="mr-1"><i class="text-{{$course->rating >= 2 ? 'yellow' : 'gray'}}-400 fas fa-star"></i></li>
+                <li class="mr-1"><i class="text-{{$course->rating >= 3 ? 'yellow' : 'gray'}}-400 fas fa-star"></i></li>
+                <li class="mr-1"><i class="text-{{$course->rating >= 4 ? 'yellow' : 'gray'}}-400 fas fa-star"></i></li>
+                <li class="mr-1"><i class="text-{{$course->rating == 5 ? 'yellow' : 'gray'}}-400 fas fa-star"></i></li>
+                               
             </ul>
             <p class="text-sm text-gray-500 ml-auto">
                 <i class="fas fa-users"></i>
@@ -23,7 +22,7 @@
             
         </div>
         
-        <a href="{{route('courses.show',$course)}}" type="submit" class="btn-block mt-2 btn btn-primary">
+        <a href="{{route('courses.show',$course)}}" type="submit" class="btn btn-primary btn-block mt-2 ">
             Más informacion
         </a>
 

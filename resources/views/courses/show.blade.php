@@ -74,11 +74,21 @@
                             <h1 class="font-bold text-gray-500 text-lg">Prof: {{$course->teacher->name}}</h1>
                             <a class="text-blue-400" href="">{{'@'.Str::slug($course->teacher->name,'')}}</a>
                         </div>
-                    </div>
-                    <a href="" class="btn btn-danger btn-block mt-4">Llevar este curso</a>
+                    </div> 
+                    
+                    @can('enrolled', $course)
+                        <a  class="btn btn-danger btn-block mt-4" href="{{route('course.status',$course)}}">Continuar con el curso</a>
+                    @else
+                        <form action="{{route('courses.enrolled',$course)}}" method="post">
+                            @csrf
+                            <button type="submit"  class="btn btn-danger btn-block mt-4">Llevar este curso</button>
+                        </form>
+                    @endcan
+
+                    
                 </div>
             </section>
-            <aside class="hidden lg:block >
+            <aside class="hidden lg:block">
                 @foreach ($similares as $similar)
                     <article class="flex mb-6">
                         <img class="h-32 w-40 object-cover" src="{{$similar->image->url}}" alt="">
